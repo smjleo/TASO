@@ -933,7 +933,7 @@ def export_onnx(graph):
         graph_outputs.append(helper.make_tensor_value_info(_output_tensor_name(graph, op, idx),
                              TensorProto.FLOAT, graph.get_output_dims(op, idx)))
     onnx_graph = helper.make_graph(graph_nodes, 'main', graph_inputs, graph_outputs, graph_initializers)
-    onnx_model = helper.make_model(onnx_graph, producer_name='TASO Optimized Model', opset_imports=[helper.make_opsetid("", 12)])
+    onnx_model = helper.make_model(onnx_graph, producer_name='TASO Optimized Model', opset_imports=[helper.make_opsetid("", 10)])
     return onnx_model
 
 def optimize(graph, alpha = 1.0, budget = 1000, print_subst = False):
