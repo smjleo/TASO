@@ -42,6 +42,5 @@ t = input
 for i in range(8):
     t = attention(graph, t, 16)
 
-new_graph = ts.optimize(graph, alpha=1.0, budget=100)
-bert_onnx = ts.export_onnx(new_graph)
-onnx.save(bert_onnx, "bert-opt.onnx")
+bert_onnx = ts.export_onnx(graph)
+onnx.save(bert_onnx, "bert.onnx")
