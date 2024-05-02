@@ -1,4 +1,5 @@
 import taso as ts
+import onnx
 
 seq_length = 64
 hidden_dims = 1024
